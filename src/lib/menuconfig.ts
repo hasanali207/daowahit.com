@@ -1315,6 +1315,7 @@ export const menus: Record<string, MenuItem[]> = {
       ],
     },
 
+    { name: "Subscription", icon: ChevronsLeft, href: "/subscription" },
     { name: "বাহির", icon: ChevronsLeft, href: "/" },
     { name: "লগ আউট", icon: Power, href: "/logout" },
   ],
