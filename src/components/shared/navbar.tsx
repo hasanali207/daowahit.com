@@ -1,5 +1,6 @@
 "use client";
 
+import { useAcademicInfo } from "@/lib/useAcademicInfo";
 import { logout, selectCurrentUser } from "@/Redux/Features/Auth/authSlice";
 import { useAppDispatch, useAppSelector } from "@/Redux/hook";
 import { persistor } from "@/Redux/store";
@@ -21,8 +22,8 @@ import {
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { info, loading, error } = useAcademicInfo();
   const [scrolled, setScrolled] = useState(false);
-
   const pathname = usePathname();
   const dispatch = useAppDispatch();
   const currentUser = useAppSelector(selectCurrentUser);
@@ -69,7 +70,7 @@ const NavBar = () => {
         <div className="max-w-7xl mx-auto px-2">
           <div className="w-full h-full">
             <Image
-              src="https://i.ibb.co.com/fG2y99YV/nav-Banner.jpg"
+              src={info?.banner || "/default-banner.jpg"}
               alt="Banner"
               width={1280}
               height={400}

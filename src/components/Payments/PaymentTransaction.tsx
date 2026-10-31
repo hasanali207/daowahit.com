@@ -3,6 +3,7 @@
 import { SolaimanLipiBase64 } from "@/fonts/solaiman";
 import api from "@/lib/axios";
 import { getPagination } from "@/lib/getPageNumber";
+import { useAcademicInfo } from "@/lib/useAcademicInfo";
 import { numberToBanglaWords } from "@/types/numberToBanglaWords ";
 import { formatBanglaDateTime, formatDateBn } from "@/utils/dateBn";
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -11,7 +12,7 @@ import { useEffect, useState } from "react";
 export default function TransactionPage() {
   const [transactions, setTransactions] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
-
+  const { info, loading: academicLoading, error } = useAcademicInfo();
   const [page, setPage] = useState(1);
   const [limit] = useState(15);
   const [totalPages, setTotalPages] = useState(1);

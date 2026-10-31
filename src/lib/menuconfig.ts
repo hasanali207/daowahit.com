@@ -1195,6 +1195,11 @@ export const menus: Record<string, MenuItem[]> = {
       icon: GlobeIcon,
       sub: [
         {
+          name: "একাডেমিক তথ্য",
+          href: "/superadmin/admin/website/academicinfo",
+          icon: Image,
+        },
+        {
           name: "ব্যানার ডিজাইন",
           href: "/superadmin/admin/website/banner",
           icon: Image,
